@@ -1,3 +1,5 @@
+/* Load a newer Supabase library (supports the new sb_publishable keys); it replaces the older copy loaded by index.html. */
+document.write('<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.78.0"><\/script>');
 /* net.js - RoomNet: real internet transport (Supabase Realtime Broadcast) replacing the claude.ai-only 'room' capability.
    Same API the game already uses: use() -> {join(name)} ; room.presence(patch), room.onPeers(cb), room.leave(), room.peers */
 (function(){
