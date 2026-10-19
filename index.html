@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Spirit Heroes: Long Spin - Free Online Spinner Battle Game (1v1 Multiplayer)</title>
 <meta name="description" content="Play Spirit Heroes: Long Spin free in your browser. Collect 20 spirit-hero spinners and battle friends or players online in 1v1 to 4-player matches on phone or desktop.">
-<link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPO/">
+<link rel="canonical" href="https://developerxmaster-dot.github.io/Master-s-Blades/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#0b1030">
-<meta property="og:type" content="website"><meta property="og:title" content="Spirit Heroes: Long Spin - Free Online Spinner Battle Game"><meta property="og:description" content="Battle friends online in real-time spinner matches. Free, no download."><meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO/">
+<meta property="og:type" content="website"><meta property="og:title" content="Spirit Heroes: Long Spin - Free Online Spinner Battle Game"><meta property="og:description" content="Battle friends online in real-time spinner matches. Free, no download."><meta property="og:url" content="https://developerxmaster-dot.github.io/Master-s-Blades/">
 <style>
 :root{--ink:#f2f4ff;--mute:rgba(230,236,255,.58);--acc:#9fe3ff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 html,body{height:100%;margin:0}
@@ -973,7 +973,7 @@ var RSX=[60,55,75,70,50,45,65,60],RSD=[55,50,45,50,70,80,55,65],RSS=[60,65,50,60
 var TI=[];SP.forEach(function(o,i){if(o.top&&!o.hide)TI.push(i);});
 var B={phase:'ready',bl:[],t:0,paused:false,hits:0,best:0,spark:[],flash:[],shake:0,zp:0,mode:3,um:3,me:0,vs:false,rec:[],rp:null,cp:null,rs:[null,null],sw:[0,0],cl:0,mp:null,n:2,lastElim:null,lastWhy:null,lm:'tap',stg:'auto',shp:'auto',shk:'',sh:null,st:null,dropT:0,spinG:null,tune:0,etune:0,lvl:5,dif:1,agm:1,pi:0,oi:1,acc:0,last:0,ts:1,tsT:1,slowT:0,msg:'',msgT:0,endIn:0,recT:0,evq:[],bsave:null};
 var cam={th:0,E:.9,z:1,ox:0,oy:0},tilt={x:0,y:0},tT={x:0,y:0},ctl='touch',gyroOk=false,ori={b:0,g:0},neu={b:0,g:0},tsens=1,aut=0,bb=null,bsn=[],lastHit=0,lastScr=0,hudT=0,bAuT=0,dragX=null;
-window.__B=B;window.__bs=function(){return[bW,bH,bSc,bFit,bCy];};var fl=false,LW=360,LH=640;var jv={x:0,y:0},jvs={x:0,y:0};window.__jv=jv;window.__Pj=function(x,y,z){return Pj(x,y,z);};var vz=1,agg=1,jsz=130,capT=0;
+window.__B=B;window.__bs=function(){return[bW,bH,bSc,bFit,bCy];};var fl=false,LW=360,LH=640;var jv={x:0,y:0},jvs={x:0,y:0};window.__jv=jv;window.__Pj=function(x,y,z){return Pj(x,y,z);};var vz=1,agg=1,jsz=130,capT=0;var CT=window.CTRL||{},JOYG=CT.joy||6.5,PULLH=CT.pull!=null?CT.pull:.35,BRK=CT.brake!=null?CT.brake:1.2,JLK=CT.lock||.4;
 function layout(){
   var W=window.innerWidth||360,H=window.innerHeight||640,land=W>H;
   if(land)fl=false;
@@ -1270,13 +1270,13 @@ function bStep(dt){
     if(b.dead){b.vx*=1-4*dt;b.vy*=1-4*dt;b.x+=b.vx*dt;b.y+=b.vy*dt;b.rpm=0;b.z=zS(b.x,b.y);return;}
     if(i===1&&B.rs[1]&&B.sw[1]<=0&&B.phase==='fight'&&rn<.3&&B.rs[1].rpm>b.rpm*1.5){bSwap(1);return;}
     if(b.jlock>0)b.jlock-=dt;
-    var jt=(b.mv||b.jlock>0)?.12:1;b.jk=(b.jk==null?1:b.jk)+(jt-(b.jk==null?1:b.jk))*Math.min(1,dt*10);
+    var jt=(b.mv||b.jlock>0)?JLK:1;b.jk=(b.jk==null?1:b.jk)+(jt-(b.jk==null?1:b.jk))*Math.min(1,dt*10);
     if(b.ctl==='bot'&&B.pads&&!b.mv&&rn<.42){var bp=null,bd=9;B.pads.forEach(function(pd){var q=Math.hypot(pd.x-b.x,pd.y-b.y);if(q<bd){bd=q;bp=pd;}});if(bp&&bd>.08){var kq=(1-rn/.42)*1.6;fx+=(bp.x-b.x)/bd*kq;fy+=(bp.y-b.y)/bd*kq;}}
     if(B.pads&&B.phase==='fight'&&!b.out)B.pads.forEach(function(pd){var dx2=pd.x-b.x,dy2=pd.y-b.y,q=Math.hypot(dx2,dy2);if(q<.16&&q>1e-4){var kk=4.4*(1-q/.16);fx+=dx2/q*kk;fy+=dy2/q*kk;}});
-    if(b.ctl==='me'&&B.phase==='fight'){var jx=jv.x*c+jv.y*s,jy=-jv.x*s+jv.y*c;fx+=3.4*(.6+.4*rn)*jx*b.jk;fy+=3.4*(.6+.4*rn)*jy*b.jk;}
+    if(b.ctl==='me'&&B.phase==='fight'){var jx=jv.x*c+jv.y*s,jy=-jv.x*s+jv.y*c;fx+=JOYG*(.6+.4*rn)*jx*b.jk;fy+=JOYG*(.6+.4*rn)*jy*b.jk;if(Math.abs(jv.x)+Math.abs(jv.y)<.05){fx-=b.vx*BRK;fy-=b.vy*BRK;}}
     var oth=bFoe(b)||b,hasF=oth!==b;
-    if(hasF&&B.phase==='fight'&&rn>.1){var ox2=oth.x-b.x,oy2=oth.y-b.y,od2=Math.hypot(ox2,oy2)||1;fx+=1.7*ag*ox2/od2;fy+=1.7*ag*oy2/od2;}
-    if(b.ctl==='net'&&B.phase==='fight'){var vj=vs.vj[i]||{x:0,y:0};fx+=3.4*(.6+.4*rn)*vj.x;fy+=3.4*(.6+.4*rn)*vj.y;}
+    if(hasF&&B.phase==='fight'&&rn>.1){var ox2=oth.x-b.x,oy2=oth.y-b.y,od2=Math.hypot(ox2,oy2)||1;var pk=(b.ctl==='me'||b.ctl==='net')?PULLH:1;fx+=1.7*ag*pk*ox2/od2;fy+=1.7*ag*pk*oy2/od2;}
+    if(b.ctl==='net'&&B.phase==='fight'){var vj=vs.vj[i]||{x:0,y:0};fx+=JOYG*(.6+.4*rn)*vj.x;fy+=JOYG*(.6+.4*rn)*vj.y;if(Math.abs(vj.x)+Math.abs(vj.y)<.05){fx-=b.vx*BRK;fy-=b.vy*BRK;}}
     if(b.ctl==='bot'&&B.phase==='fight'&&hasF){var ox=oth.x-b.x,oy=oth.y-b.y,od=Math.hypot(ox,oy)||1,k=(.4+.6*rn)*(rn>.12?1:0)*ag*B.agm;
       if(b.cls==='attack'){fx+=2.4*ox/od*k;fy+=2.4*oy/od*k;}else if(b.cls==='defense'){fx+=(-b.x*.5+.8*ox/od)*k;fy+=(-b.y*.5+.8*oy/od)*k;}else{fx+=(-ny*.5+1.0*ox/od)*k;fy+=(nx*.5+1.0*oy/od)*k;}
       b.rush-=dt;if(b.rush<=0&&rn>.2){b.rush=(2.5+Math.random()*2.5)/(ag*B.agm);b.vx+=ox/od*1.8;b.vy+=oy/od*1.8;}
